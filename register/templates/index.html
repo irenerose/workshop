@@ -64,8 +64,12 @@
                                        <i class='fa fa-user fa-fw' style='color:#F14700'></i> My Profile </a>
                                </li>                                <li class="divider"></li>
                                <li>
+
                                    <a href="{% url 'logout' %}">
                                        <i class='fa fa-power-off fa-fw' style='color:red'></i> Logout
+                                   </a>
+                                   <a href="{% url 'user_profile_update' %}">
+                                       <i class='fa fa-power-off fa-fw' style='color:red'></i> Edit Profile
                                    </a>
                                </li>
                            </ul>
@@ -93,6 +97,9 @@
         <th>
             Price
         </th>
+           <th>
+            More
+        </th>
     </tr>
     </thead>
     <tbody>
@@ -102,11 +109,14 @@
             <td> {{ item.description }}</td>
             <td> {{ item.manufacturer }}</td>
             <td> {{ item.price }}</td>
+            <td> <a href="{% url 'chocolate_info' item.id %}">Info</a> </td>
         </tr>
     {% endfor %}
     </tbody>
 </table>
 </div>
+/
+
 
 
 
